@@ -1,8 +1,10 @@
 
 const express = require('express');
 const dbconnect = require('./Database/index')
+const {PORT} = require('./config/index')
+
 const app = express();
-const port = 3000;
+const port = PORT;
 
 
 dbconnect();
