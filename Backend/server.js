@@ -8,19 +8,19 @@ const app = express();
 const port = 3000;
 
 // Middleware function
-const myMiddleware = (req, res, next) => {
-    // Do something before passing control to the next middleware or route handler
-    console.log('Middleware executed');
-    next(); // Call next() to pass control to the next middleware or route handler
-  };
+// const myMiddleware = (req, res, next) => {
+//     // Do something before passing control to the next middleware or route handler
+//     console.log('Middleware executed');
+//     next(); // Call next() to pass control to the next middleware or route handler
+//   };
 
-app.use(myMiddleware);
+// app.use(myMiddleware);
 app.use(router);
 
-app.get('./test' , (res,req) =>{
+// app.get('/test' , (res,req) =>{
 
-    res.json({msg : "working "})
-});
+//     res.json({msg : "working "})
+// });
 
 
 dbconnect();
