@@ -15,10 +15,4 @@ app.use(router);
 
 
 
-
-// app.get("/", (req,res) => 
-// res.json({msg : "hello world"})
-
-// );
-
 app.listen(port , console.log(`backend is running on http://localhost:${port}`));
