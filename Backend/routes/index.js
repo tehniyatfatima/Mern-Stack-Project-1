@@ -12,10 +12,12 @@ const router = express.Router();
 router.get('/test', (req, res)=>res.json({msg:"Working"}));   
 
 //user
+//register
+router.post('/register',authcontroller.register)
 
 //login
 router.post('/login',authcontroller.login)
-//register
+
 //logout
 // refresh
 

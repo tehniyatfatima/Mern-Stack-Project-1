@@ -16,7 +16,7 @@ const authcontroller = {
         //2. if error in validation ---> return error in middle ware
 
        if (error){
-        
+            return next (error);
        }
 
         //3. if eamil or ouser name already register -----> return an error
