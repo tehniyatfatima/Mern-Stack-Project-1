@@ -2,11 +2,11 @@ const monsooge = require ('mongoose')
 
 // create schema
 
-const {schema} = monsooge
+const {Schema} = monsooge
 
 // create model
 
-const blogschema = new schema ({
+const blogschema = new Schema ({
     title : {type: String , required: true},
     Content : {type: String , required: true},
     photopath : {type:String , required: false},
@@ -16,4 +16,4 @@ const blogschema = new schema ({
 
 )
 
-module.exports = monsooge.model('blog', blogschema , 'blogs')
+module.exports = monsooge.model('Blog', blogschema , 'blogs')

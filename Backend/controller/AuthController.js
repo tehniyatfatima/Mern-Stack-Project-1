@@ -1,4 +1,5 @@
 const Joi = require('joi')
+const user = require('../models/user')
 
 // creating authcontroller
 const authcontroller = {
@@ -20,6 +21,37 @@ const authcontroller = {
        }
 
         //3. if eamil or ouser name already register -----> return an error
+
+        const {username, name, email, password} = req.body;
+        try{
+            const emailInUse = await user.exits({email});
+            const UsernameInUse = await user.exits({username});
+
+            if (emailInUse) {
+                const error = {
+                    status: 409,
+                    message: "email already exists use another email"
+
+                }
+
+                return next (error)
+            }
+
+            if (UsernameInUse) {
+                const error = {
+                    status: 409,
+                    message: "user name already exist choose another user name"
+
+                }
+
+                return next (error)
+            }
+
+        }
+        catch(error){
+            return next (error)
+
+        }
         //4. password hash
         //5. Store data in db 
         //6. response send

@@ -2,9 +2,9 @@
 const mongoose = require ('mongoose');
 const blog = require('./blog');
 
-const {schema} = mongoose;
+const {Schema} = mongoose;
 
-const commentschema = new schema ({
+const commentschema = new Schema ({
     content: {type: String , required:true},
     blog : {type: mongoose.SchemaType.ObjectId , ref: 'blogs'},
     Author : {type: mongoose.SchemaType.ObjectId , ref: 'users'}
